@@ -1,10 +1,6 @@
-var jomini = require('./');
-var JS = require('json3');
-var concat = require('concat-stream');
-var concatStream = concat(function(buf) {
-    var str = buf.toString('utf8');
-    var obj = jomini.parse(str);
-    process.stdout.write(JS.stringify(obj));
+var Jomini = require('./').Jomini;
+var parser = new Jomini();
+process.stdin.pipe(parser);
+parser.on('finish', function() {
+  process.stdout.write('' + parser.count, 'utf8');
 });
-
-process.stdin.pipe(concatStream)

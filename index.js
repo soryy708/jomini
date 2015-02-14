@@ -1,5 +1,6 @@
 exports = module.exports;
-exports.parse = require('./lib/jomini').parse;
+exports.Jomini = require('./lib/jomini');
 exports.toArray = require('./lib/toArray');
 exports.toDate = require('./lib/toDate');
-exports.toBool = require('./lib/toBool');	
+exports.toBool = require('./lib/toBool');
+exports.parse = require('./lib/parse');
