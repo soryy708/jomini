@@ -116,41 +116,41 @@ describe('parse', function() {
   //   check('foo = { "bar" "baz" }', {'foo': ['bar', 'baz']}, done);
   // });
 
-  // it('should handle empty object', function(done) {
-  //   check('foo = {}', {'foo': {}}, done);
-  // });
+  it('should handle empty object', function(done) {
+    check('foo = {}', {'foo': {}}, done);
+  });
 
-  // it('should handle space empty object', function(done) {
-  //   check('foo = { }', {'foo': {}}, done);
-  // });
+  it('should handle space empty object', function(done) {
+    check('foo = { }', {'foo': {}}, done);
+  });
 
-  // it('should handle the object after empty object', function(done) {
-  //   var obj = {
-  //     foo: {},
-  //     catholic: {
-  //       defender: 'me'
-  //     }
-  //   };
+  it('should handle the object after empty object', function(done) {
+    var obj = {
+      foo: {},
+      catholic: {
+        defender: 'me'
+      }
+    };
 
-  //   check('foo={} catholic={defender="me"}', obj, done);
-  // });
+    check('foo={} catholic={defender="me"}', obj, done);
+  });
 
-  // it('should handle the object after empty object nested', function(done) {
-  //   var obj = {
-  //     religion: {
-  //       foo: {},
-  //       catholic: {
-  //         defender: 'me'
-  //       }
-  //     }
-  //   };
+  it('should handle the object after empty object nested', function(done) {
+    var obj = {
+      religion: {
+        foo: {},
+        catholic: {
+          defender: 'me'
+        }
+      }
+    };
 
-  //   check('religion={foo={} catholic={defender="me"}}', obj, done);
-  // });
+    check('religion={foo={} catholic={defender="me"}}', obj, done);
+  });
 
-  // it('should ignore empty objects with no identifier at end', function(done) {
-  //   check('foo={bar=val {}}  { } me=you', {foo: {bar: 'val'}, me: 'you'}, done);
-  // });
+  it('should ignore empty objects with no identifier at end', function(done) {
+    check('foo={bar=val {}}  { } me=you', {foo: {bar: 'val'}, me: 'you'}, done);
+  });
 
   // it('should understand a list of objects', function(done) {
   //   var str = 'attachments={ { id=258579 type=4713 } ' +
@@ -258,9 +258,9 @@ describe('parse', function() {
   //   check(str1 + str2, expected, done);
   // });
 
-  // it('should handle dates as identifiers', function(done) {
-  //   check('1480.1.1=yes', {'1480.1.1': true}, done);
-  // });
+  it('should handle dates as identifiers', function(done) {
+    check('1480.1.1=yes', {'1480.1.1': true}, done);
+  });
 
   // it('should handle consecutive numbers', function(done) {
   //   check('foo = { 1 -1.23 }', {'foo': [1, -1.23]}, done);
@@ -271,27 +271,27 @@ describe('parse', function() {
   //     [new Date(Date.UTC(1821, 0, 1)), new Date(Date.UTC(1821, 1, 1))]}, done);
   // });
 
-  // it('should understand comments mean skip line', function(done) {
-  //   check('# boo\r\n# baa\r\nfoo=a\r\n# bee', {'foo': 'a'}, done);
-  // });
+  it('should understand comments mean skip line', function(done) {
+    check('# boo\r\n# baa\r\nfoo=a\r\n# bee', {'foo': 'a'}, done);
+  });
 
-  // it('should understand simple objects', function(done) {
-  //   check('foo={bar=val}', {'foo': {'bar': 'val'}}, done);
-  // });
+  it('should understand simple objects', function(done) {
+    check('foo={bar=val}', {'foo': {'bar': 'val'}}, done);
+  });
 
   // it('should understand nested list objects', function(done) {
   //   check('foo={bar={val}}', {'foo': {'bar': ['val']}}, done);
   // });
 
-  // it('should understand objects with start spaces', function(done) {
-  //   check('foo= { bar=val}', {'foo': {'bar': 'val'}}, done);
-  // });
+  it('should understand objects with start spaces', function(done) {
+    check('foo= { bar=val}', {'foo': {'bar': 'val'}}, done);
+  });
 
-  // it('should understand objects with end spaces', function(done) {
-  //   check('foo={bar=val }', {'foo': {'bar': 'val'}}, done);
-  // });
+  it('should understand objects with end spaces', function(done) {
+    check('foo={bar=val }', {'foo': {'bar': 'val'}}, done);
+  });
 
-  // it('should ignore empty objects with no identifier', function(done) {
-  //   check('foo={bar=val} {} { } me=you', {foo: {bar: 'val'}, me: 'you'}, done);
-  // });
+  it('should ignore empty objects with no identifier', function(done) {
+    check('foo={bar=val} {} { } me=you', {foo: {bar: 'val'}, me: 'you'}, done);
+  });
 });
