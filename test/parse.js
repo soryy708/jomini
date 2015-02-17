@@ -41,64 +41,64 @@ describe('parse', function() {
     check('foo="bar"\nfoo="qux"', {'foo':['bar', 'qux']}, done);
   });
 
-  // it('should handle boolen', function(done) {
-  //   check('foo=yes', {'foo': true}, done);
-  // });
+  it('should handle boolen', function(done) {
+    check('foo=yes', {'foo': true}, done);
+  });
 
   // it('should handle boolen list', function(done) {
   //   check('foo={yes no}', {'foo': [true, false]}, done);
   // });
 
-  // it('should handle whole numbers', function(done) {
-  //   check('foo=1', {'foo': 1}, done);
-  // });
+  it('should handle whole numbers', function(done) {
+    check('foo=1', {'foo': 1}, done);
+  });
 
-  // it('should handle zero', function(done) {
-  //   check('foo=0', {'foo': 0}, done);
-  // });
+  it('should handle zero', function(done) {
+    check('foo=0', {'foo': 0}, done);
+  });
 
-  // it('should handle negative whole numbers', function(done) {
-  //   check('foo=-1', {'foo': -1}, done);
-  // });
+  it('should handle negative whole numbers', function(done) {
+    check('foo=-1', {'foo': -1}, done);
+  });
 
-  // it('should handle decimal number', function(done) {
-  //   check('foo=1.23', {'foo': 1.23}, done);
-  // });
+  it('should handle decimal number', function(done) {
+    check('foo=1.23', {'foo': 1.23}, done);
+  });
 
-  // it('should handle negative decimal number', function(done) {
-  //   check('foo=-1.23', {'foo': -1.23}, done);
-  // });
+  it('should handle negative decimal number', function(done) {
+    check('foo=-1.23', {'foo': -1.23}, done);
+  });
 
-  // it('should handle number list accumulation', function(done) {
-  //   check('foo=1\nfoo=-1.23', {'foo':[1, -1.23]}, done);
-  // });
+  it('should handle number list accumulation', function(done) {
+    check('foo=1\nfoo=-1.23', {'foo':[1, -1.23]}, done);
+  });
 
-  // it('should handle dates', function(done) {
-  //   check('date=1821.1.1', {'date': new Date(Date.UTC(1821, 0, 1))}, done);
-  // });
+  it('should handle dates', function(done) {
+    check('date=1821.1.1', {'date': new Date(Date.UTC(1821, 0, 1))}, done);
+  });
 
-  // it('should deceptive dates', function(done) {
-  //   check('date=1821.a.1', {date: '1821.a.1'}, done);
-  // });
+  it('should deceptive dates', function(done) {
+    check('date=1821.a.1', {date: '1821.a.1'}, done);
+  });
 
-  // it('should handle quoted dates', function(done) {
-  //   check('date="1821.1.1"', {'date': new Date(Date.UTC(1821, 0, 1))}, done);
-  // });
+  it('should handle quoted dates', function(done) {
+    check('date="1821.1.1"', {'date': new Date(Date.UTC(1821, 0, 1))}, done);
+  });
 
-  // it('should handle accumulated dates', function(done) {
-  //   check('date="1821.1.1"\ndate=1821.2.1',
-  //     {'date':[
-  //       new Date(Date.UTC(1821, 0, 1)), new Date(Date.UTC(1821, 1, 1))
-  //     ]}, done);
-  // });
+  it('should handle accumulated dates', function(done) {
+    check('date="1821.1.1"\ndate=1821.2.1',
+      {'date':[
+        new Date(Date.UTC(1821, 0, 1)), new Date(Date.UTC(1821, 1, 1))
+      ]}, done);
+  });
 
-  // it('should handle numbers as identifiers', function(done) {
-  //   check('158=10', {'158': 10}, done);
-  // });
+  it('should handle numbers as identifiers', function(done) {
+    check('158=10', {'158': 10}, done);
+  });
 
-  // it('should handle periods in identifiers', function(done) {
-  //   check('flavor_tur.8=yes', {'flavor_tur.8': true}, done);
-  // });
+  it('should handle periods in identifiers', function(done) {
+    check('flavor_tur.8=yes', {'flavor_tur.8': true}, done);
+  });
 
   // it('should handle empty objects for dates', function(done) {
   //   check('1920.1.1={}', {'1920.1.1': {}}, done);
