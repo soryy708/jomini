@@ -100,17 +100,17 @@ describe('parse', function() {
     check('flavor_tur.8=yes', {'flavor_tur.8': true}, done);
   });
 
-  // it('should handle empty objects for dates', function(done) {
-  //   check('1920.1.1={}', {'1920.1.1': {}}, done);
-  // });
+  it('should handle empty objects for dates', function(done) {
+    check('1920.1.1={}', {'1920.1.1': {}}, done);
+  });
 
-  // it('should handle consecutive strings', function(done) {
-  //   check('foo = { bar baz }', {'foo': ['bar', 'baz']}, done);
-  // });
+  it('should handle consecutive strings', function(done) {
+    check('foo = { bar baz }', {'foo': ['bar', 'baz']}, done);
+  });
 
-  // it('should handle consecutive strings no space', function(done) {
-  //   check('foo={bar baz}', {'foo': ['bar', 'baz']}, done);
-  // });
+  it('should handle consecutive strings no space', function(done) {
+    check('foo={bar baz}', {'foo': ['bar', 'baz']}, done);
+  });
 
   // it('should handle consecutive quoted strings', function(done) {
   //   check('foo = { "bar" "baz" }', {'foo': ['bar', 'baz']}, done);
@@ -279,9 +279,13 @@ describe('parse', function() {
     check('foo={bar=val}', {'foo': {'bar': 'val'}}, done);
   });
 
-  // it('should understand nested list objects', function(done) {
-  //   check('foo={bar={val}}', {'foo': {'bar': ['val']}}, done);
-  // });
+  it('should understand nested list objects', function(done) {
+    check('foo={bar={val}}', {'foo': {'bar': ['val']}}, done);
+  });
+
+  it('should understand nested list objects space', function(done) {
+    check('foo={bar={val }}', {'foo': {'bar': ['val']}}, done);
+  });
 
   it('should understand objects with start spaces', function(done) {
     check('foo= { bar=val}', {'foo': {'bar': 'val'}}, done);
